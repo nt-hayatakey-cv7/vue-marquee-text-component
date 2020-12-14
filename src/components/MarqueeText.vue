@@ -42,6 +42,7 @@
         class: [
           staticClass,
           $style.wrap,
+          classText
         ]
       }, [
         h('div', {
@@ -50,7 +51,7 @@
               ? $style.paused
               : undefined,
             $style.content,
-            classText,
+            // classText,
           ]
         }, Array(repeat).fill(text))
       ])

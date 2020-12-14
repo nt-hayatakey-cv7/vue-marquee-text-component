@@ -2035,9 +2035,10 @@ var es_string_repeat = __webpack_require__("38cf");
     return h('div', {
       key: key,
       on: on,
-      class: [staticClass, $style.wrap]
+      class: [staticClass, $style.wrap, classText]
     }, [h('div', {
-      class: [paused ? $style.paused : undefined, $style.content, classText]
+      class: [paused ? $style.paused : undefined, $style.content // classText,
+      ]
     }, Array(repeat).fill(text))]);
   }
 });
