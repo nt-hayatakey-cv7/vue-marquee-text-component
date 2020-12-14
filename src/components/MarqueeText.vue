@@ -3,6 +3,10 @@
     name: 'MarqueeText',
     functional: true,
     props: {
+      classText: {
+        type   : String,
+        default: '',
+      },
       duration: {
         type: Number,
         default: 15
@@ -23,7 +27,7 @@
         default: false
       }
     },
-    render(h, { $style, props: { duration, repeat, paused, reverse }, children, data: { staticClass, key, on } }) {
+    render(h, { $style, props: { duration, repeat, paused, reverse }, children, data: { staticClass, classText, key, on } }) {
       const text = h('div', {
         class: $style.text,
         style: {
@@ -37,7 +41,8 @@
         on,
         class: [
           staticClass,
-          $style.wrap
+          $style.wrap,
+          classText,
         ]
       }, [
         h('div', {
