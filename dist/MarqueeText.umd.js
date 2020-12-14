@@ -2028,10 +2028,10 @@ var es_string_repeat = __webpack_require__("38cf");
         repeat = _ref$props.repeat,
         paused = _ref$props.paused,
         reverse = _ref$props.reverse,
+        classText = _ref$props.classText,
         children = _ref.children,
         _ref$data = _ref.data,
         staticClass = _ref$data.staticClass,
-        classText = _ref$data.classText,
         key = _ref$data.key,
         on = _ref$data.on;
     var text = h('div', {
@@ -2044,9 +2044,9 @@ var es_string_repeat = __webpack_require__("38cf");
     return h('div', {
       key: key,
       on: on,
-      class: [staticClass, $style.wrap, classText]
+      class: [staticClass, $style.wrap]
     }, [h('div', {
-      class: [paused ? $style.paused : undefined, $style.content]
+      class: [paused ? $style.paused : undefined, $style.content, classText]
     }, Array(repeat).fill(text))]);
   }
 });

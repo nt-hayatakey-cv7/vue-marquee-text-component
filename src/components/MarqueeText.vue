@@ -27,7 +27,7 @@
         default: false
       }
     },
-    render(h, { $style, props: { duration, repeat, paused, reverse }, children, data: { staticClass, classText, key, on } }) {
+    render(h, { $style, props: { duration, repeat, paused, reverse, classText }, children, data: { staticClass, key, on } }) {
       const text = h('div', {
         class: $style.text,
         style: {
@@ -42,7 +42,6 @@
         class: [
           staticClass,
           $style.wrap,
-          classText,
         ]
       }, [
         h('div', {
@@ -50,7 +49,8 @@
             paused
               ? $style.paused
               : undefined,
-            $style.content
+            $style.content,
+            classText,
           ]
         }, Array(repeat).fill(text))
       ])
