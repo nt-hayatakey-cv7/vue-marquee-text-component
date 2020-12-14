@@ -1997,6 +1997,10 @@ var es_string_repeat = __webpack_require__("38cf");
   name: 'MarqueeText',
   functional: true,
   props: {
+    classText: {
+      type: String,
+      default: ''
+    },
     duration: {
       type: Number,
       default: 15
@@ -2027,6 +2031,7 @@ var es_string_repeat = __webpack_require__("38cf");
         children = _ref.children,
         _ref$data = _ref.data,
         staticClass = _ref$data.staticClass,
+        classText = _ref$data.classText,
         key = _ref$data.key,
         on = _ref$data.on;
     var text = h('div', {
@@ -2039,7 +2044,7 @@ var es_string_repeat = __webpack_require__("38cf");
     return h('div', {
       key: key,
       on: on,
-      class: [staticClass, $style.wrap]
+      class: [staticClass, $style.wrap, classText]
     }, [h('div', {
       class: [paused ? $style.paused : undefined, $style.content]
     }, Array(repeat).fill(text))]);
